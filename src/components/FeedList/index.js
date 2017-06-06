@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import FeedRecord from '../FeedRecord';
 
-function FeedList({ error, feed }) {
+const FeedList = ({ error, feed }) => {
   if (error !== false) {
     return <div>Something went wrong, please try again!</div>;
   }
@@ -21,7 +21,7 @@ function FeedList({ error, feed }) {
   }
 
   return null;
-}
+};
 
 FeedList.propTypes = {
   error: PropTypes.any,

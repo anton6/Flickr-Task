@@ -38,6 +38,10 @@ const Title = styled.div`
   }
 `;
 
+const isEmpty = (string) => (
+  string.length > 0
+);
+
 const FeedRecord = ({ data }) => (
   <Container className="col-xs-6 col-sm-3 col-md-3 col-lg-3">
     <Record>
@@ -47,13 +51,13 @@ const FeedRecord = ({ data }) => (
         </Anchor>
       </LazyLoad>
       <Info>
-        { data.title.trim().length > 0
+        { !isEmpty(data.title.trim())
           ? <Title>{data.title}</Title>
           : <br />}
         <Anchor href={data.link} target="_blank" rel="noopener noreferrer">
           <Title prefix="by ">{data.author.split('"')[1]}</Title>
         </Anchor>
-        { data.tags.trim().length > 0
+        { !isEmpty(data.tags.trim())
           ? <Title><i>{data.tags}</i></Title>
           : <br />}
       </Info>
