@@ -39,7 +39,7 @@ const Title = styled.div`
 `;
 
 const isEmpty = (string) => (
-  string.length > 0
+  string.length === 0
 );
 
 const FeedRecord = ({ data }) => (
